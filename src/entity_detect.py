@@ -6,11 +6,13 @@ TASK: Given an UTTERANCE, detect origin and destination address
 OUTPUT FORMAT: 
 <ORIGIN>address of the origin</ORIGIN>
 <DESTINATION>address of the destination</DESTINATION>
+(DO NOT OUTPUT ANYTHING EXTRA!)
 UTTERANCE:"""
 
 def entity_detect(utterance):
-    response=ollama.generate(model='llama2', 
+    response=ollama.generate(model='mistral', 
                              prompt=PROMPT+utterance)['response']
+    print(response)
     return post_process(response)
 
 def post_process(generated_text):
@@ -25,6 +27,6 @@ def post_process(generated_text):
     return address_list
 
 # Test generative call
-print(entity_detect("Hi, can you book me a cab from 2211 Edgewood St to 5480 7th Ave"))
+# print(entity_detect("Hi, can you book me a cab from 2211 Edgewood St to 5480 7th Ave"))
 
 
