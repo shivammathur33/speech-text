@@ -10,6 +10,7 @@ OUTPUT FORMAT:
 UTTERANCE:"""
 
 def entity_detect(utterance):
+    print('Searching for origin and destination...')
     response=ollama.generate(model='mistral', 
                              prompt=PROMPT+utterance)['response']
     print(response)
