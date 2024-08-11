@@ -36,7 +36,7 @@
 import speech_recognition as sr
 import ollama
 
-print(ollama.generate(model='llama2', prompt='What is the capital of France?'))
+# print(ollama.generate(model='llama2', prompt='What is the capital of France?'))
 
 # r = sr.Recognizer()
 # with sr.Microphone() as source:                # use the default microphone as the audio source
